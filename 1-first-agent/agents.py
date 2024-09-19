@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import json
 import os
-
+# imports
 load_dotenv()
 
 client = OpenAI()
@@ -118,7 +118,7 @@ def prompt_ai(messages):
         return second_response.choices[0].message.content
 
     return response_message.content
-
+# Main
 def main():
     messages = [
         {
