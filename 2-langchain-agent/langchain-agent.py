@@ -12,7 +12,7 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import SystemMessage, HumanMessage, ToolMessage
 
 load_dotenv()
-# load
+# load the data 
 model = os.getenv('LLM_MODEL', 'gpt-4o')
 
 configuration = asana.Configuration()
@@ -20,7 +20,7 @@ configuration.access_token = os.getenv('ASANA_ACCESS_TOKEN', '')
 api_client = asana.ApiClient(configuration)
 
 tasks_api_instance = asana.TasksApi(api_client)
-
+# Task name and schedule
 @tool
 def create_asana_task(task_name, due_on="today"):
     """
